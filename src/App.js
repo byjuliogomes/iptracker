@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Title from './components/Title';
+import Input from './components/Input';
+import Modal from './components/Modal';
+import SimpleMap from './components/SimpleMap';
+
+
 
 function App() {
+
+  const [email, setEmail] = useState("");
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title>IP Adress Tracker</Title>
+      <Input
+        onChangeText={(number) => console.log(number)}
+        required="required"
+        type="text"
+        className='form-control'
+        />
+      
+      <Modal onClick={(userData) => console.log(userData)}></Modal>
+      <SimpleMap></SimpleMap>
     </div>
+
+    
   );
 }
 

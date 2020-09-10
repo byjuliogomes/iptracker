@@ -17,9 +17,8 @@ const ContainerModal = styled.div`
 `;
 
 const Modal = async () => {
-
-  const [data, setdata] = useState(IP());
-  const Data = data.data;
+  const userData = await IP();
+  const Data = userData.data;
   return (
     <>
       <ContainerModal>
